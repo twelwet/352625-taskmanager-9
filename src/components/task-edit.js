@@ -1,6 +1,6 @@
 // task-edit.js
 
-const editTaskTemplate = `
+const getEditTaskTemplate = () => `
   <article class="card card--edit card--yellow card--repeat">
     <form class="card__form" method="get">
       <div class="card__inner">
@@ -270,4 +270,4 @@ const editTaskTemplate = `
   </article>
 `;
 
-export default editTaskTemplate;
+export {getEditTaskTemplate};

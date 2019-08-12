@@ -1,6 +1,6 @@
 // task.js
 
-const taskTemplate = `
+const getTaskTemplate = () => `
   <article class="card card--black">
     <div class="card__form">
       <div class="card__inner">
@@ -68,4 +68,4 @@ const taskTemplate = `
   </article>
 `;
 
-export default taskTemplate;
+export {getTaskTemplate};

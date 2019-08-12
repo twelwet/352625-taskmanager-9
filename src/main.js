@@ -1,12 +1,14 @@
 // main.js
 
-import menuTemplate from './components/menu.js';
-import sortListTemplate from './components/sort-list.js';
-import searchTemplate from './components/search.js';
-import filtersTemplate from './components/filters.js';
-import tasksTemplate from './components/tasks.js';
-import loadMoreBtnTemplate from './components/load-more-btn.js';
-import {render} from './utils.js';
+import {getMenuTemplate} from './components/menu.js';
+import {getSortListTemplate} from './components/sort-list.js';
+import {getSearchTemplate} from './components/search.js';
+import {getFiltersTemplate} from './components/filters.js';
+import {getTaskTemplate} from './components/task.js';
+import {getEditTaskTemplate} from './components/task-edit.js';
+import {getLoadMoreBtnTemplate} from './components/load-more-btn.js';
+
+const render = (template, container, placeToPaste = `afterBegin`) => container.insertAdjacentHTML(placeToPaste, template);
 
 const searchNode = document.createElement(`section`);
 searchNode.classList.add(`main__search`, `search`, `container`);
@@ -35,9 +37,12 @@ boardContainer.appendChild(taskBoardNode);
 
 const tasksContainer = boardContainer.querySelector(`.board__tasks`);
 
-render(menuTemplate, menuContainer, `beforeEnd`);
-render(searchTemplate, searchContainer, `afterBegin`);
-render(filtersTemplate, filtersContainer, `afterBegin`);
-render(sortListTemplate, boardContainer, `afterBegin`);
-render(tasksTemplate, tasksContainer, `afterBegin`);
-render(loadMoreBtnTemplate, boardContainer, `beforeEnd`);
+render(getMenuTemplate(), menuContainer, `beforeEnd`);
+render(getSearchTemplate(), searchContainer);
+render(getFiltersTemplate(), filtersContainer);
+render(getSortListTemplate(), boardContainer);
+render(getTaskTemplate(), tasksContainer);
+render(getTaskTemplate(), tasksContainer);
+render(getTaskTemplate(), tasksContainer);
+render(getEditTaskTemplate(), tasksContainer);
+render(getLoadMoreBtnTemplate(), boardContainer, `beforeEnd`);

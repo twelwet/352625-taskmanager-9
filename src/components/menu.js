@@ -1,6 +1,6 @@
 // menu.js
 
-const menuTemplate = `
+const getMenuTemplate = () => `
   <section class="control__btn-wrap">
     <input
       type="radio"
@@ -27,4 +27,4 @@ const menuTemplate = `
   </section>
 `;
 
-export default menuTemplate;
+export {getMenuTemplate};

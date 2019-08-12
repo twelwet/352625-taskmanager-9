@@ -61,14 +61,12 @@ const filtersData = [
   },
 ];
 
-const getFiltersTemplate = (filters) => {
+const getFiltersTemplate = () => {
   let template = ``;
-  for (let value of filters) {
+  for (const value of filtersData) {
     template += filterTemplate(value);
   }
   return template;
 };
 
-const filtersTemplate = getFiltersTemplate(filtersData);
-
-export default filtersTemplate;
+export {getFiltersTemplate};
